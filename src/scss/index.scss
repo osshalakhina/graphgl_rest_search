@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Open+Sans:wght@700&display=swap");
+@import "~react-toastify/dist/ReactToastify.css";
+@import "./root";
+@import "./normalize";
+@import "./variables";
+@import "./spacing";
+
+* {
+  box-sizing: border-box;
+  line-height: 1.4em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.app {
+  background-color: var(--color-background) !important;
+}
+
+.container {
+  @include container;
+}
+
+.flex {
+  display: flex;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.container-small {
+  @include container-small;
+}
+
+.relative {
+  position: relative;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input,
+select,
+textarea {
+  border-radius: 0;
+  outline: none;
+  font-family: inherit;
+
+  // fix for FF
+  &:invalid,
+  &:required {
+    box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: 0.25s linear;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+  background: transparent;
+  border: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.characters-list {
+  margin: 40px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+
+  &__item {
+    padding: 20px;
+    border: 1px solid var(--color-grayscale-c6);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--color-grayscale-c4);
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1645px) {
+  .characters-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.characters-navigation {
+  display: flex;
+  gap: 40px;
+
+  button {
+    padding: 8px 20px;
+    white-space: nowrap;
+    display: flex;
+    box-shadow: 0 0 10px var(--color-grayscale-c4);
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.3;
+    }
+  }
+}
+
+.btn-more {
+  padding: 4px 10px;
+  box-shadow: 0 0 10px var(--color-grayscale-c4);
+  border-radius: 8px;
+}
+
+.personal {
+  margin: 20px auto;
+}
+
+.personalName {
+  text-align: center;
+  padding: 20px;
+}
+
+.personalInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 20px;
+}
+
+.personalPhoto {
+  height: 500px;
+}
